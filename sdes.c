@@ -9,12 +9,12 @@
 
 int main(int argc, char *argv[]){
 
-	char *plainText = malloc(8);
-	char *key = malloc(10);
+	char *plainText = malloc(9);
+	char *key = malloc(11);
 
 	if (argc == 1){
-		strcpy(plainText, "01010001");
-		strcpy(key, "0101001100");
+		strcpy(plainText, "01010001\0");
+		strcpy(key, "0101001100\0");
 	}
 	else{
 		strcpy(plainText, argv[1]);
@@ -137,7 +137,7 @@ void decToBinary(char sbout[], int a, int b){
 }
 
 char *feistelNetwork(char *block, char *key){
-	char *cipherText = malloc(8);
+	char *cipherText = malloc(9);
 	int i;
 	char *L0 = malloc(4);
 	char *R0 = malloc(4);
@@ -223,6 +223,8 @@ char *feistelNetwork(char *block, char *key){
 
 	strcat(cipherText, R1);
 	finalPerm(cipherText);
+
+	cipherText[8] = '\0';
 
 	free(L0);
 	free(R0);
