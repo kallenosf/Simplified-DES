@@ -8,3 +8,34 @@ This implementation takes:
 - A key (10 bits in binary format)
 
 as command line arguments and outputs the corresponding ciphertext. If arguments are not given, two default values for plaintext and key are used.
+
+## Installation
+Clone the repository using the following command, and change directory:
+```sh
+git clone https://github.com/kallenosf/Simplified-DES.git
+cd Simplified-DES
+```
+Build the binary using `make`:
+```sh
+make
+```
+## Usage
+Run the compiled binary with the following format:
+```sh
+./sdes [plaintext] [key]
+```
+### Arguments
+- [plaintext]: An 8-bit binary string representing the plaintext to be encrypted (e.g., 10011010)
+- [key]: A 10-bit binary string representing the encryption key (e.g., 1110001110)
+### Example
+```sh
+./sdes 10101010 1100110011
+```
+Output:
+```
+SIMPLIFIED DES
+--------------
+ plainText = 10101010
+       key = 1100110011
+cipherText = 11101001
+```
