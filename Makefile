@@ -27,10 +27,6 @@ $(PROJ): $(OBJS)
 # To make all (program + manual) "make all"
 all :
 	make
-	make doxy
-# To make all (program + manual) "make doxy"
-doxy:
-	$(DOXYGEN) doxygen.conf &> doxygen.log
 # To clean .o files: "make clean"
 clean:
-	rm -rf *.o doxygen.log html
+	rm -rf sdes *.o 
