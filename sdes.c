@@ -13,8 +13,8 @@ int main(int argc, char *argv[]){
 	char *key = malloc(11);
 
 	if (argc == 1){
-		strcpy(plainText, "01010001\0");
-		strcpy(key, "0101001100\0");
+		strcpy(plainText, "01010001");
+		strcpy(key, "0101001100");
 	}
 	else{
 		strcpy(plainText, argv[1]);
