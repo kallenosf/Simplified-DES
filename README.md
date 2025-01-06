@@ -39,3 +39,21 @@ SIMPLIFIED DES
        key = 1100110011
 cipherText = 11101001
 ```
+## How it works
+The program implements the following diagram:
+![S-DES workflow](https://raw.githubusercontent.com/kallenosf/Simplified-DES/refs/heads/main/sdes.png)
+These are the steps:
+1. Key Generation:
+   - Derives two subkeys (K1 and K2) from the 10-bit input key using permutation and shifting operations.
+2. Initial Permutation (IP):
+   - Rearranges the 8-bit plaintext input into a predefined order.
+3. Rounds:
+   - Executes two rounds of encryption using the Feistel structure and the subkeys K1 and K2.
+4. Final Permutation (Inverse IP):
+   - Applies the inverse of the initial permutation to produce the final ciphertext.
+  
+## Cleaning Up
+To remove the compiled binary and other generated files, run:
+```sh
+make clean
+```
